@@ -8,7 +8,7 @@ public class DrivetrainJoystickCMD extends CommandBase {
     private Drivetrain runt;
     private Supplier<Double> driveSpd, turnSpd;
 
-    public DrivetrainJoystickCMD(Drivetrain runt, Supplier<Double> driveSpd, Supplier<Double> turnSpd) {
+    public DrivetrainJoystickCMD(Drivetrain runt, Supplier<Double> turnSpd, Supplier<Double> driveSpd) {
         this.runt = runt;
         this.driveSpd = driveSpd;
         this.turnSpd = turnSpd;
