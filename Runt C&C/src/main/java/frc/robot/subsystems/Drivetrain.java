@@ -24,9 +24,9 @@ public class Drivetrain extends SubsystemBase{
     }
     
     public void setMotors(double[] motorSpeeds) {
-        frontRight.set(motorSpeeds[0]);
-        backRight.set(motorSpeeds[1]);
-        frontLeft.set(motorSpeeds[2]);
-        backLeft.set(motorSpeeds[3]);
+        frontLeft.set(motorSpeeds[0]);
+        backLeft.set(motorSpeeds[1]);
+        frontRight.set(motorSpeeds[2]);
+        backRight.set(motorSpeeds[3]);
     }
 }
