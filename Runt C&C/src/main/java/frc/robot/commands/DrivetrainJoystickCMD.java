@@ -2,9 +2,9 @@ package frc.robot.commands;
 import java.util.function.Supplier;
 
 import frc.robot.subsystems.*;
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 
-public class DrivetrainJoystickCMD extends CommandBase {
+public class DrivetrainJoystickCMD extends Command {
     private Drivetrain runt;
     private Supplier<Double> driveSpd, turnSpd;
 
@@ -23,7 +23,7 @@ public class DrivetrainJoystickCMD extends CommandBase {
         double right = driveSpd.get() - turnSpd.get();
         double[] motorSpeeds = {left, left, right, -right};
 
-        runt.setMotors(motorSpeeds);
+        runt.setSpeeds(motorSpeeds);
     }
 
     @Override
