@@ -25,11 +25,12 @@ public class RobotContainer {
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
-    runt.setDefaultCommand(new DrivetrainJoystickCMD(
-      runt,
-      () -> joystick.getRawAxis(0),
-      () -> -joystick.getRawAxis(1)
-    ));
+    runt.setDefaultCommand(
+      runt.driveJoystick(
+        joystick.getRawAxis(0), 
+        joystick.getRawAxis(1)
+      )
+    );
     // Configure the trigger bindings
     configureBindings();
   }

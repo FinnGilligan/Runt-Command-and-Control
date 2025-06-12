@@ -3,6 +3,7 @@ package frc.robot.subsystems;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj2.command.Command;
 
 import frc.robot.Constants.OperatorConstants;
 
@@ -27,5 +28,10 @@ public class Drivetrain extends SubsystemBase {
         frontRight.set(speed[1]);
         backLeft.set(speed[2]);
         backRight.set(speed[3]);
+    }
+
+    public Command driveJoystick(double left, double right) {
+        double[] speed = {left, left, right, -right};
+        return this.runOnce(() -> this.setSpeeds(speed));
     }
 }
